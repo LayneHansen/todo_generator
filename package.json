@@ -1,0 +1,27 @@
+{
+  "name": "todo_generator",
+  "version": "1.0.0",
+  "description": "Application is used to create a list of todo items, save them to a database, and delete them when they are complete.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LayneHansen/todo_generator.git"
+  },
+  "author": "Layne Hansen",
+  "license": "MIT",
+  
+  "scripts": {
+    "start:server": "node ./server/server.js"
+  }
+
+  "bugs": {
+    "url": "https://github.com/LayneHansen/todo_generator/issues"
+  },
+  "homepage": "https://github.com/LayneHansen/todo_generator#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
