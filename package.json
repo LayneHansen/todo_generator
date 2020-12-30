@@ -4,6 +4,7 @@
   "description": "Application is used to create a list of todo items, save them to a database, and delete them when they are complete.",
   "main": "server.js",
   "scripts": {
+    "watch": "nodemon ./server/server.js",
     "start:server": "node ./server/server.js"
   },
   "repository": {
