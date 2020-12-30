@@ -6,21 +6,18 @@
   "scripts": {
     "start:server": "node ./server/server.js"
   },
-  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/LayneHansen/todo_generator.git"
   },
   "author": "Layne Hansen",
   "license": "MIT",
-  
-  
-
   "bugs": {
     "url": "https://github.com/LayneHansen/todo_generator/issues"
   },
   "homepage": "https://github.com/LayneHansen/todo_generator#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^5.11.9"
   }
 }
