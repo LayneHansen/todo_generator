@@ -1,28 +1,40 @@
-import React, { useEffect, useContext } from 'react';
-import { GlobalContext } from '../utils/GlobalContext';
+import React, { useEffect } from 'react';
+import { useGlobalContext } from '../utils/GlobalContext';
 
 const ViewTodos = () => {
-    const globalContext = useContext(GlobalContext);
-    console.log({globalContext});
+    const [state, dispatch] = useGlobalContext();
+    console.log(state);
+
     useEffect(() => {
         async function fetchTodos() {
             console.log('hit fetchTodos');
           try {
             const response = await fetch("/api/todo");
-            const data = await response.json();
-            console.log({ data });
+            const json = await response.json();
+            console.log({ json });
+
+            dispatch({ type: 'setTodos', payload: json.data });
     
           } catch (err) {
             console.log({ err });
           }
         }
+
+        fetchTodos();
       }, []);
     
 
     return (
-        <>
-            <h2>View Todos Page</h2>
-        </>
+        <div className="Todos">
+        <h3 className="Todos-header">Current Todos</h3>
+            <ul className="Todos-list">
+                {state.todos.map((todo) => (
+                <li key={todo._id} className="Todos-listItem">
+                    <span>{todo.text}</span>
+                </li>
+                ))}
+            </ul>
+        </div>
     );
 };
 

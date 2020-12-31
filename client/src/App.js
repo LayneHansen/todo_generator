@@ -22,22 +22,4 @@ function App() {
   );
 }
 
-function Component1() {
-  return (
-    <>Component 1</>
-  )
-};
-
-function Component2() {
-  return (
-    <>Component 2</>
-  )
-};
-
-function Component3() {
-  return (
-    <>Component 3</>
-  )
-};
-
 export default App;
