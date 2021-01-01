@@ -8,8 +8,6 @@ router
         Todo
             .find({})
             .then(data => {
-                console.log("TODO GET");
-                console.log({ data });
                 res.json({ success: true, data });
             })
             .catch(err => {
@@ -18,14 +16,12 @@ router
             })
     })
     .post((req, res) => {
-        console.log({reqBody: req.body});
 
         Todo
             .create({
                 text: req.body.text
             })
             .then(data => {
-                console.log({ data });
                 res.json({ success: true, data });
             })
             .catch(err => {
@@ -34,5 +30,20 @@ router
             })
 
 });
+
+router
+    .route('/:id')
+    .delete((req, res) => {
+
+        Todo
+          .findByIdAndDelete(req.params.id)
+          .then(data => {
+              res.json({ success: true});
+          })
+          .catch(err => {
+              res.json({ success: false });
+              console.log({err});
+          });
+    });
 
 module.exports = router;
